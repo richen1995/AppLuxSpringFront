@@ -1,0 +1,52 @@
+
+<div *ngIf="devices.length === 0; else table_device" class="alert alert-warning text-center">
+    No hay productos que mostrar
+  </div>
+
+  
+  <ng-template #table_device>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let device of devices; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            {{ device.sku }}
+          </td>     
+          <td>
+            <img [src]="urlImg + device.image" 
+                 [alt]="'lentes el crack'">
+          </td>  
+          <td>
+            <div>
+              <h2>Subir Archivo</h2>
+              <input type="file" (change)="upload($event)" />
+            </div>
+          </td>
+          <td>{{ device.name }}</td>
+          <td>{{ device.description }}</td>
+          <td>{{ device.price | number }}</td>
+          <td>{{ device.stock | number }}</td>
+          <td> 
+            <a [routerLink]="[ '/countries/by-device-id', device.id_device ]" >Info</a>
+          </td> 
+          <td>{{device.image}}</td>
+        </tr>
+      </tbody>
+  
+    </table>
+  
+  </ng-template>
+  
+  <!-- TABLA DE LOS PRODUCTOS -->
+  

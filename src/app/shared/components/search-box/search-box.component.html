@@ -1,0 +1,8 @@
+<!-- (keyup.enter)="emitValue( txtInput.value ) --funcion al dar enter hace la consulta" -->
+<input
+  type="text"
+  class="form-control"
+  [placeholder]="placeholder"
+  (keyup)="onKeyPress(txtInput.value)"
+  #txtInput
+>

@@ -1,0 +1,27 @@
+<div class="card nb-2 text-center bg-dark card-hover equal-card" 
+        [ngClass]="{'card-hover': isHovered}"
+        (mouseenter)="onHover(true)"
+        (mouseleave)="onHover(false)">
+    <div class="card-body text-white">
+        <img 
+            [src]="urlImg + device.image" 
+            [alt]="'lentes el crack'"
+            class="card-img-top mb-3">
+
+        <p class="card-text text-start">
+            <!-- {{device.id_device}} -->
+            {{device.name}}
+        </p>
+
+        <div class="d-flex justify-content-between">
+            <p class="card-text">
+                {{device.price | currency}}
+            </p>
+            <a [routerLink]="[ '/countries/by-device-id', device.id_device ]" 
+                class="btn btn-primary custom-padding"
+            >Info</a>
+        </div>
+         
+    </div>
+</div>
+

@@ -1,0 +1,7 @@
+<div class="row">
+    <pre>{{devicesPrueba | json}}</pre>
+    <div *ngFor="let device of devicesPrueba" class="col-md-3 col-sm-6">
+        <gifts-card [device]="device"></gifts-card>
+    </div>
+</div>
+
