@@ -14,7 +14,7 @@ import { CountriesService } from '../../services/devices.service';
 export class DeviceTableLuxComponent {
 
   //public urlImg: string = 'http://localhost:8080/media/';
-  public urlImg: string = 'https://app-luxtraking-35822574356f.herokuapp.com';
+  public urlImg: string = 'https://app-luxtraking-35822574356f.herokuapp.com/media/';
 
   constructor(
     private countriesService: CountriesService
